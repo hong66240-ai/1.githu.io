@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=63996&format=png&color=000000" type="image/png">
+</head>
+<body>
+
+    <!-- Header / Navbar System -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="Home.html" class="logo">Online Store</a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-links">
+                <a href="Home.html" class="Home">Home</a>
+                <a href="About.html" class="About">About</a>
+                <a href="Shop.html" class="Shop">Shop</a>
+                <a href="Contact.html" class="Contact active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section Layout -->
+    <main class="page-container">
+        <section class="contact-wrapper">
+            <div class="contact-header">
+                <h1 class="page-title">Get In Touch</h1>
+                <p class="page-subtitle">Have questions or need support? Drop us a line and our dynamic response team will touch base inside 24 hours.</p>
+            </div>
+
+            <!-- Sleek Minimal Form Fields -->
+            <form class="contact-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+
+                <button type="submit" class="Btn form-submit-btn">Send Message</button>
+            </form>
+        </section>
+</body>
+</html>

@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #63ceff;
+    color: #222222;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. Modern Sticky Navigation Bar
+   ========================================================================== */
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111111;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-links a {
+    padding: 8px 16px;
+    color: #555555;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #111111;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   3. Mobile Menu Toggle Button (Hamburger)
+   ========================================================================== */
+.menu-toggle {
+    display: none; /* Invisible on Desktop layouts */
+    background: transparent;
+    border: 2px solid #111111; 
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #111111; 
+    border-radius: 1px;
+}
+
+/* ==========================================================================
+   4. Clean Minimalist Hero Section
+   ========================================================================== */
+.hero-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+}
+
+.hero-content {
+    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('../img/BackGround.png');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 24px;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-title {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #111111;
+}
+
+.hero-subtitle {
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666666;
+    margin-bottom: 36px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   5. Modern Responsive Product Grid
+   ========================================================================== */
+.shop-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.top {
+    width: 100%;
+    height: 240px;
+    background-color: #f5f5f7;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.top .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .top .img {
+    transform: scale(1.03);
+}
+
+.card-body {
+    padding: 16px 4px 4px 4px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0071e3; /* Premium visual accent color */
+    margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   6. Unified Button Styling
+   ========================================================================== */
+.Btn, .btn {
+    display: inline-block;
+    padding: 12px 36px;
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.Btn:hover, .btn:hover {
+    background-color: #2e2e2e;
+}
+
+.Btn:active, .btn:active {
+    transform: scale(0.98);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   7. Media Queries (Mobile Responsive Overrides)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show menu icon on small viewports */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 16px 24px;
+        border-bottom: 1px solid #eeeeee;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        gap: 4px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Shows links vertical panel block toggled by JS */
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 12px 16px;
+    }
+    
+    .hero-content {
+        padding: 24px 16px;
+    }
+}
+/* ==========================================================================
+   8. Shared About & Contact Core Layout Styles
+   ========================================================================== */
+.page-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 24px;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #111111;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #666666;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* About Page Content Cards */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.about-card {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.about-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* Clean UI Contact Form Structure */
+.contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #111111;
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #111111;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.03);
+}
+
+.form-submit-btn {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+    .contact-form {
+        padding: 24px 16px;
+    }
+}
